@@ -23,16 +23,10 @@ public class Rope : MonoBehaviour {
 			HingeJoint2D joint = link.GetComponent<HingeJoint2D>();
 			joint.connectedBody = previousRB;
 
-			if (i < links - 1)
-			{
-				previousRB = link.GetComponent<Rigidbody2D>();
-			} else
-			{
-				weigth.ConnectRopeEnd(link.GetComponent<Rigidbody2D>());
-			}
-
-			
+			previousRB = link.GetComponent<Rigidbody2D>();			
 		}
+		
+		weigth.ConnectRopeEnd(previousRB);
 	}
 
 }
